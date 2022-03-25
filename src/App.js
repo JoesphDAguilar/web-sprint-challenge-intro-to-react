@@ -3,16 +3,17 @@ import axios from 'axios';
 import './App.css'
 
 import Character from './components/Character';
-import CharacterDetails from './components/CharacterDetails';
 
 const App = () => {
 
-  const [starChar, setStarChar] = useState(null);
+  const [starChar, setStarChar] = useState([]);
 
   useEffect(() => {
-    axios.get('https://swapi.dev/api/people')
+    axios.get(`https://swapi.dev/api/people`)
     .then(res => {
-      console.log(res.data.results);
+      //console.log(res.data);
+      setStarChar(res.data);
+      
     })
     .catch(err => console.error(err))
   }, [])
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      <Character char={starChar} />
     </div>
   );
 }
