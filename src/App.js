@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     axios.get('https://swapi.dev/api/people/')
     .then(res => {
-      //console.log(({data}));
+      //console.log(res.data);
       setStarChar(res.data);
       
     })
