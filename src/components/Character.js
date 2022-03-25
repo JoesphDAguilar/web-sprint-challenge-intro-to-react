@@ -1,10 +1,26 @@
 // Write your Character component here
 import React from "react";
+import styled from 'styled-components';
+
+const StyledDetail = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2%
+h2 {
+    font-size:2rem;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 1%
+}
+`
 
 function Character(props) {
 
   return (
-          <div>
+      <StyledDetail>
             <h2>{props.data.name}</h2>
             <p>Height: {props.data.height}</p>
             <p>Mass: {props.data.mass}</p>
@@ -17,7 +33,7 @@ function Character(props) {
             <p>Species: {props.data.species}</p>
             <p>Vehicles: {props.data.vehicles}</p>
             <p>Starships: {props.data.starships}</p> */}
-          </div>
+          </StyledDetail>
         )
 };
 

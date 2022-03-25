@@ -9,7 +9,7 @@ const App = () => {
   const [starChar, setStarChar] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://swapi.dev/api/people`)
+    axios.get('https://swapi.dev/api/people')
     .then(res => {
       //console.log(({data}));
       setStarChar(res.data.results);
@@ -27,5 +27,6 @@ const App = () => {
     </div>
   );
 }
+
 
 export default App;
