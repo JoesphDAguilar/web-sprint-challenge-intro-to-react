@@ -11,8 +11,8 @@ const App = () => {
   useEffect(() => {
     axios.get(`https://swapi.dev/api/people`)
     .then(res => {
-      //console.log(res.data);
-      setStarChar(res.data);
+      //console.log(({data}));
+      setStarChar(res.data.results);
       
     })
     .catch(err => console.error(err))
@@ -21,7 +21,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character char={starChar} />
+      {starChar.map((char, idx) => 
+      <Character key={char.name} data={starChar[idx]} /> 
+      )}
     </div>
   );
 }
