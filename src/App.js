@@ -9,10 +9,10 @@ const App = () => {
   const [starChar, setStarChar] = useState([]);
 
   useEffect(() => {
-    axios.get('https://swapi.dev/api/people')
+    axios.get('https://swapi.dev/api/people/')
     .then(res => {
       //console.log(({data}));
-      setStarChar(res.data.results);
+      setStarChar(res.data);
       
     })
     .catch(err => console.error(err))
